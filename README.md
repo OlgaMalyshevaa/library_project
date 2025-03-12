@@ -1,20 +1,27 @@
 # Library project
 
 ## Запуск проекта
-1) склонируйте репозиторий
+1) Cклонируйте репозиторий
 ```bash
 git clone https://github.com/username/library_project.git
 ```
-2) установите зависимости 
+2) Установите зависимости 
 ```bash
 go mod tidy
 ```
 
-3) создайте файл .env
+3) Проверьте файл .env
 
-4) запустите проект
+```
+DATABASE_URL=host=localhost port=5432 user=postgres dbname=postgres password=newpassword sslmode=disable
+DB_NAME=music_db
+PORT=8080
+```
+Замените `newpassword` на пароль, который вы используете для пользователя `postgres`
+
+4) Запустите проект
 ```bash
-docker-compose up --build
+go run cmd/apiserver/main.go
 ```
 
 ## Доступ к Swagger:
